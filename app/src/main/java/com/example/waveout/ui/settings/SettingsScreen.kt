@@ -207,13 +207,13 @@ fun SettingsScreen(
                 SettingsRow(
                     icon = Icons.AutoMirrored.Rounded.OpenInNew,
                     label = "GitHub Repository",
-                    description = "github.com/waveout-app/waveout",
+                    description = "github.com/joynix28/waveout-app",
                     modifier = Modifier.clickable {
-                        openUrl(context, "https://github.com/waveout-app/waveout")
+                        openUrl(context, "https://github.com/joynix28/waveout-app")
                     },
                     control = {
                         IconButton(onClick = {
-                            openUrl(context, "https://github.com/waveout-app/waveout")
+                            openUrl(context, "https://github.com/joynix28/waveout-app")
                         }) {
                             Icon(Icons.AutoMirrored.Rounded.OpenInNew, contentDescription = null)
                         }
