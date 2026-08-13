@@ -1,0 +1,11 @@
+WaveOut est une application Android 100% gratuite, libre et open source conçue pour nettoyer les haut-parleurs et expulser l'eau accumulée via synthèse acoustique PCM temps réel et vibrations haptiques ciblées.
+
+Fonctionnalités :
+• Éjecter Eau : Onde sinusoïdale de résonance à 165 Hz et vibrations continues pour expulser l'eau.
+• Poussière : Balayage fréquentiel de 300 Hz à 800 Hz pour déloger les micro-poussières.
+• Nettoyage Profond : Routine complète multi-étapes.
+• Mode Manuel : Réglage précis de la fréquence (20 Hz à 20 000 Hz) et de la minuterie.
+• Widget Écran d'accueil : Nettoyage instantané en 1 clic.
+• Respect de la vie privée : Zéro publicité, zéro traceur, zéro requête réseau, zéro SDK propriétaire.
+• Design Material 3 : Thèmes Sombre, Clair et Système.
+• Bilingue : Interface en Français et en Anglais.

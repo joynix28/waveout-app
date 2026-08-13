@@ -22,9 +22,9 @@ class WaveOutWidget : AppWidgetProvider() {
     }
 
     companion object {
-        const val ACTION_WATER_EJECT = "com.example.waveout.WIDGET_WATER_EJECT"
-        const val ACTION_DUST_CLEAN = "com.example.waveout.WIDGET_DUST_CLEAN"
-        const val ACTION_STOP = "com.example.waveout.WIDGET_STOP"
+        const val ACTION_WATER_EJECT = "io.github.joynix28.waveout.WIDGET_WATER_EJECT"
+        const val ACTION_DUST_CLEAN = "io.github.joynix28.waveout.WIDGET_DUST_CLEAN"
+        const val ACTION_STOP = "io.github.joynix28.waveout.WIDGET_STOP"
         
         fun updateWidget(
             context: Context,

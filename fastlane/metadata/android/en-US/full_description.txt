@@ -1,0 +1,11 @@
+WaveOut is a 100% free, libre, and open-source Android application designed to clean phone speakers and eject water using real-time PCM acoustic synthesis and targeted haptic vibrations.
+
+Features:
+• Water Eject: 165 Hz resonance sine wave with continuous vibrations to expel trapped water droplets.
+• Dust Clean: 300 Hz to 800 Hz frequency sweep to dislodge dust particles.
+• Deep Clean: Comprehensive multi-stage cleaning routine.
+• Custom Mode: Precise manual control of frequency (20 Hz to 20,000 Hz) and duration.
+• Home Screen Widget: Quick 1-tap cleaning from your home screen.
+• Privacy-Friendly: No advertisements, no trackers, no network requests, no proprietary dependencies.
+• Full Material 3 Design: Dark, Light, and System themes.
+• Bilingual: English and French interface support.

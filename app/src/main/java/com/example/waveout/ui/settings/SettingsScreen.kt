@@ -252,9 +252,12 @@ fun SettingsScreen(
 
 private fun openUrl(context: Context, url: String) {
     try {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        context.startActivity(intent)
+        val uri = Uri.parse(url)
+        if (uri.scheme.equals("https", ignoreCase = true)) {
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            context.startActivity(intent)
+        }
     } catch (e: Exception) {
         e.printStackTrace()
     }

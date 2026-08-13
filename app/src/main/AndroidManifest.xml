@@ -34,9 +34,9 @@
             android:label="WaveOut Widget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="com.example.waveout.WIDGET_WATER_EJECT" />
-                <action android:name="com.example.waveout.WIDGET_DUST_CLEAN" />
-                <action android:name="com.example.waveout.WIDGET_STOP" />
+                <action android:name="io.github.joynix28.waveout.WIDGET_WATER_EJECT" />
+                <action android:name="io.github.joynix28.waveout.WIDGET_DUST_CLEAN" />
+                <action android:name="io.github.joynix28.waveout.WIDGET_STOP" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
