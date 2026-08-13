@@ -23,10 +23,12 @@ class MainActivity : ComponentActivity() {
         
         val prefs = getSharedPreferences("waveout_prefs", Context.MODE_PRIVATE)
         val hasSeenTutorial = prefs.getBoolean("has_seen_tutorial", false)
+        val savedLang = prefs.getString("app_language", "FR")
+        val initialLanguage = if (savedLang == "EN") AppLanguage.ENGLISH else AppLanguage.FRENCH
 
         setContent {
             var themeMode by remember { mutableStateOf(ThemeMode.SYSTEM) }
-            var appLanguage by remember { mutableStateOf(AppLanguage.FRENCH) }
+            var appLanguage by remember { mutableStateOf(initialLanguage) }
             var showTutorial by remember { mutableStateOf(!hasSeenTutorial) }
 
             val isSystemDark = isSystemInDarkTheme()
@@ -45,12 +47,19 @@ class MainActivity : ComponentActivity() {
                         themeMode = themeMode,
                         onThemeModeChange = { themeMode = it },
                         appLanguage = appLanguage,
-                        onLanguageChange = { appLanguage = it }
+                        onLanguageChange = { newLang ->
+                            appLanguage = newLang
+                            prefs.edit().putString("app_language", if (newLang == AppLanguage.ENGLISH) "EN" else "FR").apply()
+                        }
                     )
 
                     if (showTutorial) {
                         OnboardingTutorialDialog(
-                            appLanguage = appLanguage,
+                            currentLanguage = appLanguage,
+                            onLanguageSelected = { selectedLang ->
+                                appLanguage = selectedLang
+                                prefs.edit().putString("app_language", if (selectedLang == AppLanguage.ENGLISH) "EN" else "FR").apply()
+                            },
                             onDismiss = {
                                 showTutorial = false
                                 prefs.edit().putBoolean("has_seen_tutorial", true).apply()

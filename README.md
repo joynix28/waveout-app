@@ -5,6 +5,7 @@
 </p>
 
 <p align="center">
+  <b>100% Free, Open Source & Ad-Free Android application to clean phone speakers and eject water using PCM acoustic synthesis and haptic vibrations.</b><br/>
   <b>Application Android 100% Gratuite, Open Source et Sans Publicité pour nettoyer les haut-parleurs et expulser l'eau via synthèse acoustique PCM et vibrations haptiques.</b>
 </p>
 
@@ -17,19 +18,15 @@
 
 ---
 
-## 📖 Table des matières
-1. [Présentation](#-présentation)
-2. [Fonctionnalités Clés](#-fonctionnalités-clés)
-3. [Principe Acoustique & Technique](#-principe-acoustique--technique)
-4. [Arborescence du Projet](#-arborescence-du-projet)
-5. [Architecture & Composants](#-architecture--composants)
-6. [Compilation & Installation](#-compilation--installation)
-7. [Contribution & Licence](#-contribution--licence)
+## 📑 Language / Langue
+- [🇫🇷 Version Française](#-version-française)
+- [🇬🇧 English Version](#-english-version)
 
 ---
 
-## 🌟 Présentation
+# 🇫🇷 Version Française
 
+## 1. Présentation
 **WaveOut** a été développé pour proposer une alternative moderne, transparente et gratuite aux applications payantes (comme *Clear Wave*), souvent remplies de traceurs et de publicités intrusives.
 
 Elle combine :
@@ -37,11 +34,11 @@ Elle combine :
 - Des **modèles de vibration haptiques** synchronisés pour maximiser le déplacement mécanique de l'eau.
 - Une **interface Jetpack Compose Material 3** ultra-fluide (Sombre / Clair / Système).
 - Un **Widget universel pour écran d'accueil** (compatible Xiaomi HyperOS/MIUI, Samsung One UI, Honor MagicOS, Google Pixel...).
-- Un **tutoriel interactif au premier lancement**.
+- Un **tutoriel interactif avec sélection de langue au premier lancement**.
 
 ---
 
-## ⚡ Fonctionnalités Clés
+## 2. Modes de Nettoyage
 
 | Mode | Fréquence / Signal | Durée | Rôle |
 |---|---|---|---|
@@ -52,21 +49,21 @@ Elle combine :
 
 ---
 
-## 🔬 Principe Acoustique & Technique
+## 3. Principe Acoustique & Technique
 
-### 1. Synthèse Audio PCM en temps réel (`AudioEngine.kt`)
+### Synthèse Audio PCM en temps réel (`AudioEngine.kt`)
 Plutôt que de jouer de simples fichiers MP3 préenregistrés (qui subissent des artefacts de compression et une perte d'amplitude), WaveOut génère dynamiquement des **échantillons PCM 16-bit non compressés** à une fréquence d'échantillonnage de **44.1 kHz stéréo** via `android.media.AudioTrack` en mode `MODE_STREAM` :
 
 $$\text{sample}(t) = \text{Short.MAX\_VALUE} \times \sin\left(\frac{2\pi \cdot f \cdot t}{\text{sampleRate}}\right)$$
 
 L'amplitude est maintenue au maximum théorique pour générer le déplacement d'air maximal nécessaire à l'éjection.
 
-### 2. Moteur Haptique (`VibrationEngine.kt`)
+### Moteur Haptique (`VibrationEngine.kt`)
 Utilise l'API `VibrationEffect` d'Android (API 26+) pour alterner des ondes continues (pour l'eau) et des impulsions rapides (pour la poussière).
 
 ---
 
-## 📁 Arborescence du Projet
+## 4. Arborescence du Projet
 
 ```text
 waveout/
@@ -74,7 +71,7 @@ waveout/
 │   ├── build.gradle.kts             # Configuration Gradle du module app
 │   └── src/
 │       └── main/
-│           ├── AndroidManifest.xml   # Déclaration des permissions, widget & services
+│           ├── AndroidManifest.xml   # Permissions, déclaration du widget & services
 │           ├── java/com/example/waveout/
 │           │   ├── MainActivity.kt          # Point d'entrée, gestion du thème & tutoriel
 │           │   ├── Navigation.kt            # Navigation native fluide (Crossfade)
@@ -97,7 +94,7 @@ waveout/
 │           │   │   │   ├── HomeScreen.kt         # Écran principal avec visualiseur & commandes
 │           │   │   │   └── HomeViewModel.kt      # ViewModel & coroutines de nettoyage
 │           │   │   ├── onboarding/
-│           │   │   │   └── OnboardingTutorialDialog.kt # Dictacticiel de premier lancement
+│           │   │   │   └── OnboardingTutorialDialog.kt # Dictacticiel & sélecteur de langue
 │           │   │   ├── settings/
 │           │   │   │   └── SettingsScreen.kt     # Paramètres (Thème, Langue, Licence, GitHub)
 │           │   │   └── theme/
@@ -119,28 +116,123 @@ waveout/
 
 ---
 
-## 🚀 Compilation & Installation
+## 5. Compilation & Installation
 
-### Prérequis
-- **JDK 17 ou 21**
-- **Android SDK** (API 26 minimum, compileSdk 36)
-
-### Cloner et compiler le projet
 ```bash
 git clone https://github.com/joynix28/waveout-app.git
 cd waveout-app
 
 # Compilation du build Debug
 ./gradlew assembleDebug
+```
 
-# L'APK sera généré dans :
-# app/build/outputs/apk/debug/app-debug.apk
+---
+---
+
+# 🇬🇧 English Version
+
+## 1. Overview
+**WaveOut** was built to provide a modern, transparent, and completely free alternative to paid speaker cleaner apps (like *Clear Wave*), which are often plagued by ads and trackers.
+
+Key highlights:
+- Real-time generation of **calibrated PCM 16-bit sine wave signals**.
+- Synchronized **haptic vibration patterns** to maximize mechanical fluid displacement.
+- Ultra-smooth **Jetpack Compose Material 3 UI** (Dark / Light / System theme).
+- **Universal Home Screen Widget** (compatible with Xiaomi HyperOS/MIUI, Samsung One UI, Honor MagicOS, Google Pixel Launcher...).
+- **Interactive onboarding tutorial with language selection on first launch**.
+
+---
+
+## 2. Cleaning Modes
+
+| Mode | Frequency / Pattern | Duration | Purpose |
+|---|---|---|---|
+| 💧 **Water Eject** | 165 Hz (Resonance Frequency) | 30s | Generates continuous acoustic air pressure and vibration to expel water droplets from speaker mesh. |
+| 💨 **Dust Clean** | Sweep 300 Hz $\rightarrow$ 800 Hz | 20s | Sweeps through frequency bands to dislodge micro-dust and trapped debris. |
+| 🧹 **Deep Clean** | Multi-stage (165 Hz $\rightarrow$ Sweep 200–2000 Hz $\rightarrow$ 440 Hz) | 60s | Full-spectrum cleaning combining low bass resonance, wide sweep and stabilizer tone. |
+| 🎛️ **Custom Mode** | 20 Hz to 20,000 Hz | 10s to 120s | Customizable frequency and timer with optional vibration toggle. |
+
+---
+
+## 3. Acoustic & Technical Principles
+
+### Real-Time PCM Audio Synthesis (`AudioEngine.kt`)
+Instead of playing compressed audio files (which suffer from lossy artifacts and capped power), WaveOut synthesizes **uncompressed 16-bit PCM samples** at **44.1 kHz stereo** using Android's `AudioTrack` API in `MODE_STREAM`:
+
+$$\text{sample}(t) = \text{Short.MAX\_VALUE} \times \sin\left(\frac{2\pi \cdot f \cdot t}{\text{sampleRate}}\right)$$
+
+Amplitude is maintained at theoretical maximum to achieve peak cone excursion and air displacement.
+
+### Haptic Engine (`VibrationEngine.kt`)
+Leverages Android's `VibrationEffect` API (API 26+) for seamless continuous vibration or multi-frequency pulse waveforms.
+
+---
+
+## 4. Project Tree Structure
+
+```text
+waveout/
+├── app/
+│   ├── build.gradle.kts             # App module Gradle configuration
+│   └── src/
+│       └── main/
+│           ├── AndroidManifest.xml   # Permissions, widgets & service declarations
+│           ├── java/com/example/waveout/
+│           │   ├── MainActivity.kt          # App entrypoint, theme & onboarding controller
+│           │   ├── Navigation.kt            # Native Compose transition navigation (Crossfade)
+│           │   ├── audio/
+│           │   │   ├── AudioEngine.kt       # Real-time PCM synthesis (AudioTrack)
+│           │   │   ├── VibrationEngine.kt   # Haptic controller (VibrationEffect)
+│           │   │   └── CleaningModes.kt     # Mode enums & presets
+│           │   ├── data/
+│           │   │   ├── DefaultDataRepository.kt # Reactive SessionStore (Kotlin Flow)
+│           │   │   └── model/SessionRecord.kt   # Session history data entity
+│           │   ├── ui/
+│           │   │   ├── components/
+│           │   │   │   ├── WaveformVisualizer.kt # Real-time Canvas sine wave visualizer
+│           │   │   │   ├── TimerRing.kt          # Animated circular progress timer ring
+│           │   │   │   ├── FrequencySlider.kt    # Logarithmic frequency slider (20Hz-20kHz)
+│           │   │   │   └── ModeCard.kt           # Mode selector card
+│           │   │   ├── history/
+│           │   │   │   └── HistoryScreen.kt      # Session history list screen
+│           │   │   ├── home/
+│           │   │   │   ├── HomeScreen.kt         # Main dashboard with controls
+│           │   │   │   └── HomeViewModel.kt      # ViewModel & cleaning coroutines
+│           │   │   ├── onboarding/
+│           │   │   │   └── OnboardingTutorialDialog.kt # Step-by-step onboarding & language picker
+│           │   │   ├── settings/
+│           │   │   │   └── SettingsScreen.kt     # App settings (Theme, Language, MIT, GitHub)
+│           │   │   └── theme/
+│           │   │       ├── WaveOutTheme.kt       # Material 3 Design System (Dark / Light)
+│           │   │       └── Type.kt               # App typography
+│           │   └── widget/
+│           │       ├── WaveOutWidget.kt          # Universal AppWidgetProvider
+│           │       └── WaveOutWidgetService.kt   # Foreground Service for widget actions
+│           └── res/
+│               ├── drawable/                     # Vector icons & WaveOut logo
+│               ├── layout/                       # Widget & notification XML layouts
+│               ├── values/                       # Strings & base styles
+│               └── xml/                          # AppWidget provider info
+├── gradle/
+│   └── libs.versions.toml           # Dependency version catalog
+├── README.md                        # Project documentation (Bilingual)
+└── build.gradle.kts                 # Root Gradle build script
 ```
 
 ---
 
-## 📜 Licence
+## 5. Build & Setup
 
-Ce projet est sous licence **MIT**. Vous êtes libre de l'utiliser, de le modifier et de le redistribuer librement.
+```bash
+git clone https://github.com/joynix28/waveout-app.git
+cd waveout-app
 
-*Développé pour la communauté open-source.*
+# Build debug APK
+./gradlew assembleDebug
+```
+
+---
+
+## 📜 License
+
+Distributed under the **MIT License**. See `LICENSE` for more information.
