@@ -2,11 +2,11 @@ package com.example.waveout
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.runtime.*
+import com.example.waveout.model.AppLanguage
+import com.example.waveout.model.ThemeMode
 import com.example.waveout.ui.history.HistoryScreen
 import com.example.waveout.ui.home.HomeScreen
-import com.example.waveout.ui.settings.AppLanguage
 import com.example.waveout.ui.settings.SettingsScreen
-import com.example.waveout.ui.settings.ThemeMode
 
 enum class AppScreen {
     HOME,

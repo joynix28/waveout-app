@@ -11,9 +11,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import com.example.waveout.model.AppLanguage
+import com.example.waveout.model.ThemeMode
 import com.example.waveout.ui.onboarding.OnboardingTutorialDialog
-import com.example.waveout.ui.settings.AppLanguage
-import com.example.waveout.ui.settings.ThemeMode
 import com.example.waveout.ui.theme.WaveOutTheme
 
 class MainActivity : ComponentActivity() {

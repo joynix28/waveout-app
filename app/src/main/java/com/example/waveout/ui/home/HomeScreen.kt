@@ -15,10 +15,10 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.waveout.audio.AudioEngine
 import com.example.waveout.audio.CleaningMode
 import com.example.waveout.audio.VibrationEngine
+import com.example.waveout.model.AppLanguage
 import com.example.waveout.ui.components.ModeCard
 import com.example.waveout.ui.components.TimerRing
 import com.example.waveout.ui.components.WaveformVisualizer
-import com.example.waveout.ui.settings.AppLanguage
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.waveout.data.SessionStore
 import com.example.waveout.data.model.SessionRecord
-import com.example.waveout.ui.settings.AppLanguage
+import com.example.waveout.model.AppLanguage
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale

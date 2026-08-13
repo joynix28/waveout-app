@@ -20,18 +20,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.example.waveout.data.SessionStore
-
-enum class ThemeMode {
-    SYSTEM,
-    DARK,
-    LIGHT
-}
-
-enum class AppLanguage {
-    SYSTEM,
-    FRENCH,
-    ENGLISH
-}
+import com.example.waveout.model.AppLanguage
+import com.example.waveout.model.ThemeMode
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

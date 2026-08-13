@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.example.waveout.ui.settings.AppLanguage
+import com.example.waveout.model.AppLanguage
 
 data class TutorialStep(
     val icon: ImageVector,
